@@ -1,0 +1,72 @@
+.matc {
+  background-color: #01CF54;
+}
+.matp {
+  background-color: #9BAFA8;
+}
+.mato {
+  background-color: #F8A318;
+}
+.text-right {
+  text-align: right;
+}
+.icon {
+  font-size: x-large;
+  text-align: center;
+  width: 45%;
+
+}
+
+
+.shapeHed {
+  position: relative;
+  overflow: hidden;
+  height: 80px;
+}
+
+
+.shapeHed::before {
+  border-radius: 100%;
+  position: absolute;
+  background: #97A1AB;
+  right:30px;
+  left: -200px;
+  top: -200px;
+  content: '';
+  bottom: -200px;
+}
+
+
+.sidenav {
+
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+
+  overflow-x: hidden;
+  padding-top: 20px;
+  margin-top: 60px;
+}
+
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+}
+
+
+
+.main {
+  margin-left: 160px; /* Same as the width of the sidenav */
+  font-size: 28px; /* Increased text to enable scrolling */
+  padding: 0px 10px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+

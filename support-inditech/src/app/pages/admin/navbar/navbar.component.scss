@@ -1,0 +1,36 @@
+.example-spacer {
+  flex: 1 1 auto;
+}
+.profile-image{
+  max-width: 195px;
+  max-height: 250px;
+
+}
+.matc {
+  background-color: #01CF54;
+}
+.matp {
+  background-color: #660de7;
+}
+.mato {
+  background-color: #F8A318;
+}
+.text-right {
+  text-align: right;
+}
+.shape {
+  position: relative;
+  overflow: hidden;
+  height: 80px;
+}
+
+.shape::before {
+  border-radius: 100%;
+  position: absolute;
+  background:#E5E8EB;
+  right:-170px;
+  left: -190px;
+  top: -200px;
+  content: '';
+  bottom: 30px;
+}

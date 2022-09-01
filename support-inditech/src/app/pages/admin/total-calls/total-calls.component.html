@@ -1,0 +1,205 @@
+<!-- <mat-card class="matp">
+  <mat-list>
+    <div mat-subheader>ALL TICKETS</div>
+    <mat-form-field class="full-widths" appearance="outline">
+      <mat-icon matPrefix>search</mat-icon>
+      <input matInput type="text" name="complaintId" [(ngModel)]="complaintId" (ngModelChange)="SearchTicket()" placeholder="Enter Ticket Id...">
+    </mat-form-field>
+
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-icon matPrefix>search</mat-icon>
+      <mat-label (click)="MatSeachOption1()" >Select Calls</mat-label>
+      <mat-select [(value)]="status" (click)="MatSeachOption()" >
+        <mat-option (click)="Search()" value="All">All</mat-option>
+        <mat-option (click)="Search()" value="Pending">Pending</mat-option>
+        <mat-option (click)="Search()" value="Resolved">Resolved</mat-option>
+        <mat-option (click)="Search()" value="Assigned for site visit">Assigned for site visit</mat-option>
+        <mat-option (click)="Search()" value="Assigned for phone call">Assigned for phone call</mat-option>
+        <mat-option (click)="Search()" value="Pending for visit">Pending for visit</mat-option>
+        <mat-option (click)="Search()" value="Unresolved Calls">Unresolved Calls</mat-option>
+        <mat-option (click)="Search()" value="Inprogress for visit">Inprogress for visit</mat-option>
+
+      </mat-select>
+    </mat-form-field>
+    <div  *ngFor="let c of complaintsDetailsData.slice().reverse()| paginate:{itemsPerPage:7, currentPage:p}">
+      <mat-card  matRipple class="clickable" >
+        <div class="text-right">{{c.status}} <button mat-mini-fab class="{{c.status =='Pending' ? 'mato' : 'cmatp'}}">
+          </button></div>
+          <div mat-line *ngIf="c.complaintId !=null" >{{"Ticket ID: "}}{{c.complaintId}}</div>
+          <div mat-line *ngIf="c.complaintDescription !=null">{{"Description: "}}{{c.complaintDescription}}</div>
+          <div mat-line *ngIf="c.siteName !=null">{{"Site Name/Address: "}}{{c.siteName}}</div>
+          <div mat-line *ngIf="c.companyName !=null">{{"Company Name: "}}{{c.companyName}}</div>
+          <div mat-line *ngIf="c.callRegisteredDate !=null">{{"Raised By User: "}}{{c.raisedByFirstName}} {{c.raisedByLastName}}</div>
+          <div mat-line *ngIf="c.callRegisteredDate !=null">{{"Pending Since: "}}{{c.callRegisteredDate}}</div>
+          <div mat-line *ngIf="c.telephonicCallTime !=null">{{"Scheduled Call Time: "}}{{c.telephonicCallTime}}</div>
+          <div mat-line  *ngIf="c.assignedToTeleFirstName !=null">{{"Assigned To Technician: "}}{{c.assignedToTeleFirstName}} {{c.assignedToTeleLastName}}</div>
+          <div mat-line  *ngIf="c.teleCallRemark !=null">{{"Telephonic Remark: "}}{{c.teleCallRemark}}</div>
+          <div mat-line *ngIf="c.assignedToTeleMobileNumber !=null">{{"Technician Contact Number: "}}{{c.assignedToTeleMobileNumber}}</div>
+          <div mat-line *ngIf="c.assignedToVisitMobileNumber !=null">{{"Technician Contact Number For Visit: "}}{{c.assignedToVisitMobileNumber}}</div>
+
+          <div mat-line *ngIf="c.assignedDateForTeleCall !=null">{{"Complaint Assigned Date For Phone Call: "}}{{c.assignedDateForTeleCall}}</div>
+          <div mat-line *ngIf="c.assignedDateForVisit !=null">{{"Complaint Assigned Date For Visit: "}}{{c.assignedDateForVisit}}</div>
+          <div mat-line *ngIf="c.materialDescription !=null">{{"Material Description: "}}{{c.materialDescription}}</div>
+          <div mat-line *ngIf="c.escalationMessage !=null">{{"Escalation Message: "}}{{c.escalationMessage}}</div>
+          <div mat-line *ngIf="c.resolvedDateStr !=null">{{"Complaint Resolved: "}}{{c.resolvedDateStr}}</div>
+          <div mat-line *ngIf="c.assignedToTeleFirstName !=null">{{"Technician Assigned For Phone Call: "}}{{c.assignedToTeleFirstName}} {{c.assignedToTeleLastName}}</div>
+          <div mat-line *ngIf="c.assignedForVisitToFirstName !=null">{{"Technician Assigned For Visit: "}}{{c.assignedForVisitToFirstName}} {{c.assignedForVisitToLastName}}</div>
+          <br>
+          <button  (click)="onComplaintPhoto(c.complaintId)" mat-raised-button>VIEW COMPLAINT IMAGES</button>
+          <button class="ml40"  (click)="onCardClick(c.complaintId)" mat-raised-button>VIEW HISTORY</button>
+
+      </mat-card>
+<br>
+    </div>
+    <pagination-controls (pageChange)="p=$event"></pagination-controls>
+  </mat-list>
+</mat-card> -->
+
+
+
+
+
+
+
+
+<mat-card class="matp">
+  <mat-list>
+    <h2>All Tickets</h2>
+    <mat-form-field class="full-widths" appearance="outline">
+      <mat-icon matPrefix>search</mat-icon>
+      <input matInput type="text" name="complaintId" [(ngModel)]="complaintId" (ngModelChange)="SearchTicket()"
+        placeholder="Enter Ticket Id...">
+    </mat-form-field>
+
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-icon matPrefix>search</mat-icon>
+      <mat-label (click)="MatSeachOption1()">Select Calls</mat-label>
+      <mat-select [(value)]="status" (click)="MatSeachOption()">
+        <mat-option (click)="Search()" value="All">All</mat-option>
+        <mat-option (click)="Search()" value="Pending">Pending</mat-option>
+        <mat-option (click)="Search()" value="Resolved">Resolved</mat-option>
+        <mat-option (click)="Search()" value="Assigned for site visit">Assigned for site visit</mat-option>
+        <mat-option (click)="Search()" value="Assigned for phone call">Assigned for phone call</mat-option>
+        <mat-option (click)="Search()" value="Pending for visit">Pending for visit</mat-option>
+        <mat-option (click)="Search()" value="Unresolved Calls">Unresolved Calls</mat-option>
+        <mat-option (click)="Search()" value="Inprogress for visit">Inprogress for visit</mat-option>
+
+      </mat-select>
+    </mat-form-field>
+
+    <div *ngFor="let c of complaintsDetailsData.slice().reverse() | paginate:{itemsPerPage:7, currentPage:p}">
+      <div class="grid-container boldWord">
+        <div class="grid-item text-adjustment boldWord" mat-line *ngIf="c.complaintId !=null">{{"Ticket ID:
+          "}}{{c.complaintId}}</div>
+        <div class="grid-item boldWord" mat-line *ngIf="c.companyName !=null">{{c.companyName}}</div>
+        <div class="grid-item textadjustment">{{c.status}} <button mat-mini-fab
+            class="{{c.status =='Pending' ? 'mato' : 'cmatp'}}">
+          </button></div>
+      </div>
+
+      <mat-card matRipple class="clickable mat-card-color">
+        <div class="grid-containerdiv">
+          <div class="boldWord" mat-line *ngIf="c.complaintDescription !=null">{{"Description : "}}</div>
+          <div class="text-padding" mat-line *ngIf="c.complaintDescription !=null">{{c.complaintDescription}}</div>
+        </div>
+
+        <div class="grid-containerdiv text-uppercase">
+          <div class="boldWord " mat-line *ngIf="c.siteName !=null">{{"Site Name/Address : "}}</div>
+          <div class="text-padding" mat-line *ngIf="c.siteName !=null">{{c.siteName}}</div>
+        </div>
+
+        <div class="grid-containerdiv">
+          <div class="boldWord" mat-line *ngIf="c.callRegisteredDate !=null">{{"Raised By User : "}}</div>
+          <div class="text-padding" mat-line *ngIf="c.callRegisteredDate !=null">{{c.raisedByFirstName}}
+            {{c.raisedByLastName}}</div>
+        </div>
+
+        <div class="grid-containerdiv">
+          <div class="boldWord" mat-line *ngIf="c.callRegisteredDate !=null">{{"Complaint Logged On :"}}</div>
+          <div class="text-padding" mat-line *ngIf="c.callRegisteredDate !=null">{{c.callRegisteredDate}}</div>
+        </div>
+
+        <div class="grid-containerdiv">
+          <div class="boldWord" mat-line *ngIf="c.telephonicCallTime !=null">{{"Scheduled Telephonic Call Time :"}}
+          </div>
+          <div class="text-padding" mat-line *ngIf="c.telephonicCallTime !=null">{{c.telephonicCallTime}}</div>
+        </div>
+
+        <div class="grid-containerdiv">
+          <div class="boldWord" mat-line *ngIf="c.teleCallRemark !=null">{{"Telephonic Remark :"}}</div>
+          <div class="text-padding" mat-line *ngIf="c.teleCallRemark !=null">{{c.teleCallRemark}}</div>
+        </div>
+
+
+        <div class="grid-containerdiv">
+          <div class="boldWord" mat-line *ngIf="c.assignedToVisitMobileNumber !=null">{{"Technician Contact Number For
+            Visit :"}}</div>
+          <div class="text-padding" mat-line *ngIf="c.assignedToVisitMobileNumber !=null">
+            {{c.assignedToVisitMobileNumber}}</div>
+        </div>
+
+        <div class="grid-containerdiv">
+          <div class="boldWord" mat-line *ngIf="c.assignedDateForVisit !=null">{{"Complaint Assigned Date For Visit :
+            "}}</div>
+          <div class="text-padding" mat-line *ngIf="c.assignedDateForVisit !=null">{{c.assignedDateForVisit}}</div>
+        </div>
+
+        <div class="grid-containerdiv">
+          <div class="boldWord" mat-line *ngIf="c.materialDescription !=null">{{"Material Description : "}}</div>
+          <div class="text-padding" mat-line *ngIf="c.materialDescription !=null">{{c.materialDescription}}</div>
+        </div>
+
+        <div class="grid-containerdiv">
+          <div class="boldWord" mat-line *ngIf="c.escalationMessage !=null">{{"Escalation Message : "}}</div>
+          <div class="text-padding" mat-line *ngIf="c.escalationMessage !=null">{{c.escalationMessage}}</div>
+        </div>
+
+        <div class="grid-containerdiv">
+          <div class="boldWord" mat-line *ngIf="c.resolvedDateStr !=null">{{"Complaint Resolved : "}}</div>
+          <div class="text-padding" mat-line *ngIf="c.resolvedDateStr !=null">{{c.resolvedDateStr}}</div>
+        </div>
+
+        <div class="grid-containerdiv">
+          <div class="boldWord" mat-line *ngIf="c.assignedToTeleFirstName !=null">{{"Technician Assigned For Phone Call
+            : "}}</div>
+          <div class="text-padding" mat-line *ngIf="c.assignedToTeleFirstName !=null"> {{c.assignedToTeleFirstName}}
+            {{c.assignedToTeleLastName}}</div>
+        </div>
+
+        <div class="grid-containerdiv">
+          <div class="boldWord" mat-line *ngIf="c.assignedToTeleMobileNumber !=null">{{"Technician Contact Number : "}}
+          </div>
+          <div class="text-padding" mat-line *ngIf="c.assignedToTeleMobileNumber !=null">
+            {{c.assignedToTeleMobileNumber}}</div>
+        </div>
+
+
+        <div class="grid-containerdiv">
+          <div class="boldWord" mat-line *ngIf="c.assignedForVisitToFirstName !=null">{{"Technician Assigned For Visit :
+            "}}</div>
+          <div class="text-padding" mat-line *ngIf="c.assignedForVisitToFirstName !=null">
+            {{c.assignedForVisitToFirstName}} {{c.assignedForVisitToLastName}}</div>
+        </div>
+
+        <br>
+        <!-- <button class="button-color" (click)="onComplaintPhoto(c.complaintId)" mat-raised-button>VIEW COMPLAINT IMAGES</button>
+          <button class="ml40 button-color"  (click)="onCardClick(c.complaintId)" mat-raised-button>VIEW HISTORY</button> -->
+
+        <button mat-raised-button class="button-color" (click)="onComplaintPhoto(c.complaintId)">
+          <mat-icon>images</mat-icon>
+          VIEW COMPLAINT IMAGES
+        </button>
+        <button mat-raised-button class="ml40 button-color" (click)="onCardClick(c.complaintId)">
+          <mat-icon>history</mat-icon>
+          VIEW HISTORY
+        </button>
+
+
+      </mat-card>
+      <br>
+    </div>
+    <pagination-controls (pageChange)="p=$event"></pagination-controls>
+  </mat-list>
+</mat-card>

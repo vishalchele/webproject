@@ -1,0 +1,193 @@
+<mat-card class="matg">
+  <div>
+    <h1 class="subDiv shapeHed text-center">DASHBOARD</h1>
+  </div>
+  <div class="bootstrap-wrapper">
+    <div class="container">
+      <div class="row text-center">
+        <div class="column">
+          <mat-card (click)="onCardClick($event)" matRipple class="clickable matcard">
+            <mat-card-content>
+
+
+              <button mat-fab class="matr">
+                <mat-icon>view_list</mat-icon>
+              </button>
+              <h3>Pending Calls</h3>
+              <h1>{{dashboardDetailsData.countForPendingCalls}}</h1>
+
+            </mat-card-content>
+          </mat-card>
+        </div>
+        <div class="column">
+          <mat-card (click)="onCardClickAP($event)" matRipple class="clickable matcard">
+            <mat-card-content>
+
+              <button mat-fab class="mato">
+                <mat-icon>phone_in_talk</mat-icon>
+              </button>
+              <h3>Assigned Phone Calls</h3>
+              <h1>{{dashboardDetailsData.countForAssignedTeleCalls}}</h1>
+            </mat-card-content>
+          </mat-card>
+        </div>
+
+        <div class="column">
+          <mat-card (click)="onCardClickPV($event)" matRipple class="clickable matcard">
+            <mat-card-content>
+
+              <button mat-fab color="accent">
+                <mat-icon>view_list</mat-icon>
+              </button>
+              <h3>Pending For Visit</h3>
+              <h1>{{dashboardDetailsData.countForPendingForVisitCalls}}</h1>
+            </mat-card-content>
+          </mat-card>
+        </div>
+
+
+
+        <div class="column">
+          <mat-card (click)="onCardClickUC($event)" matRipple class="clickable matcard">
+            <mat-card-content>
+              <button mat-fab class="matc">
+                <mat-icon>rotate_right</mat-icon>
+              </button>
+              <h3>Unresolved Calls</h3>
+              <h1>{{dashboardDetailsData.countForUnresolvedCalls}}</h1>
+            </mat-card-content>
+          </mat-card>
+        </div>
+      </div>
+      <br>
+
+
+      <div class="row text-center">
+        <div class="column">
+          <mat-card (click)="onCardClickAV($event)" matRipple class="clickable matcard">
+            <mat-card-content>
+              <button mat-fab class="mato">
+                <mat-icon>pin_drop</mat-icon>
+              </button>
+
+              <h3>Assigned For Visit</h3>
+              <h1>{{dashboardDetailsData.countForAssignedSiteVisit}}</h1>
+            </mat-card-content>
+          </mat-card>
+        </div>
+        <div class="column">
+          <mat-card (click)="onCardClickIV($event)" matRipple class="clickable matcard">
+            <mat-card-content>
+              <button mat-fab color="accent">
+                <mat-icon>rotate_right</mat-icon>
+              </button>
+              <h3>Visit In-Progress</h3>
+              <h1>{{dashboardDetailsData.countForInProgressVisitCalls}}</h1>
+            </mat-card-content>
+          </mat-card>
+        </div>
+
+        <div class="column">
+          <mat-card (click)="onCardClickRC($event)" matRipple class="clickable matcard">
+            <mat-card-content>
+              <button mat-fab class="matp">
+                <mat-icon>offline_pin</mat-icon>
+              </button>
+              <h3>Resolved Calls</h3>
+              <h1>{{dashboardDetailsData.countForResolvedCalls}}</h1>
+            </mat-card-content>
+          </mat-card>
+        </div>
+
+        <div class="column">
+          <mat-card (click)="onCardClickTC($event)" matRipple class="clickable matcard">
+            <mat-card-content>
+              <button mat-fab class="matc">
+                <mat-icon>view_list</mat-icon>
+              </button>
+              <h3>Total Calls</h3>
+              <h1>{{dashboardDetailsData.totalCalls}}</h1>
+            </mat-card-content>
+          </mat-card>
+        </div>
+      </div>
+
+      <br>
+
+      <h1 class="subDiv text-center">PENDING CALLS STATISTICS</h1>
+      <div class="row text-center">
+        <div class="column">
+          <mat-card (click)="onCardClickMT($event)" matRipple class="clickable matcard">
+            <mat-card-content>
+
+              <button mat-fab color="accent">
+                <mat-icon>pin_drop</mat-icon>
+              </button>
+              <h3>More Than Three Days</h3>
+
+              <h1>{{pendingAllCountForReport.pendingCallsFromThreeDays}}</h1>
+            </mat-card-content>
+          </mat-card>
+        </div>
+        <div class="column">
+          <mat-card (click)="onCardClickMO($event)" matRipple class="clickable matcard">
+            <mat-card-content>
+
+              <button mat-fab color="accent">
+                <mat-icon>offline_pin</mat-icon>
+              </button>
+              <h3>More Than One Weeks</h3>
+
+              <h1>{{pendingAllCountForReport.pendingCallsFromOneWeek}}</h1>
+            </mat-card-content>
+          </mat-card>
+        </div>
+        <div class="column">
+          <mat-card (click)="onCardClickMTW($event)" matRipple class="clickable matcard">
+            <mat-card-content>
+
+              <button mat-fab color="accent">
+                <mat-icon>rotate_right</mat-icon>
+              </button>
+              <h3>More Than Two Weeks</h3>
+
+              <h1>{{pendingAllCountForReport.pendingCallsFromTwoWeeks}}</h1>
+            </mat-card-content>
+          </mat-card>
+        </div>
+
+        <div class="column">
+          <mat-card (click)="onCardClickMTHW($event)" matRipple class="clickable matcard">
+            <mat-card-content>
+              <button mat-fab class="matp">
+                <mat-icon>view_list</mat-icon>
+              </button>
+              <h3>More Than Three Weeks</h3>
+
+              <h1>{{pendingAllCountForReport.pendingCallsFromThreeWeeks}}</h1>
+            </mat-card-content>
+          </mat-card>
+        </div>
+
+
+      </div>
+
+
+      <br>
+      <div class="row text-center">
+        <div class="column">
+          <mat-card (click)="onCardClickMTM($event)" matRipple class="clickable matcard">
+            <mat-card-content>
+              <button mat-fab class="matc">
+                <mat-icon>offline_pin</mat-icon>
+              </button>
+              <h3>More Than Month</h3>
+
+              <h1>{{pendingAllCountForReport.pendingCallsFromMoreThanThreeWeeks}}</h1>
+            </mat-card-content>
+          </mat-card>
+        </div>
+      </div>
+    </div>
+  </div>
+</mat-card>

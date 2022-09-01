@@ -1,0 +1,44 @@
+<mat-card class="matp">
+  <h1>Your Profile Details</h1>
+  <mat-card-content>
+    <div class="bootstrap wrapper">
+      <div class="container">
+        <div class="container text-center ">
+
+          <mat-icon class="mr70"><img src="../../../assets/prof.jpg" alt="" class="profile-image"></mat-icon>
+          <h1 class="mt10">{{user.fullName}}</h1>
+
+        </div>
+        <div class="row">
+          <div class="col-md-10 offset-md-1">
+            <!-- table details -->
+            <table class="table text-center">
+              <tr>
+                <td>Fullname</td>
+                <td>{{user.firstName}} {{user.lastName}}</td>
+              </tr>
+              <tr>
+                <td>Email ID</td>
+                <td>{{user.email}}</td>
+              </tr>
+              <tr>
+                <td>Phone</td>
+                <td>{{user.mobileNumber}}</td>
+              </tr>
+              <tr>
+                <td>Role</td>
+                <td>{{user.userRoleName}}</td>
+              </tr>
+            </table>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </mat-card-content>
+  <div class="container text-center mt20">
+    <button mat-raised-button color="primary" (click)="onButtonClick($event)" matRipple class="clickable">Change
+      Password</button>
+  </div>
+</mat-card>

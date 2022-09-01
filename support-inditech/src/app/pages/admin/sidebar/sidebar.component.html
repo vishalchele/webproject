@@ -1,0 +1,23 @@
+<mat-action-list class="sidenav">
+  <div mat-subheader (click)="backButton()">Menu
+      <div class="icon"><mat-icon mat-list-icon>undo</mat-icon>
+    </div></div>
+  <button routerLink="/admin/profile" mat-list-item>
+    <mat-icon mat-list-icon>account_circle</mat-icon>Profile
+  </button>
+  <button mat-list-item routerLink="/admin/dashboard">
+    <mat-icon mat-list-icon>dashboard</mat-icon>Dashboard
+  </button>
+  <button mat-list-item routerLink="/admin/report">
+    <mat-icon mat-list-icon>speaker_notes</mat-icon>Reports
+  </button>
+  <button mat-list-item routerLink="/admin/manage-tech">
+    <mat-icon mat-list-icon>build icon</mat-icon>Manage Technicians
+  </button>
+  <button mat-list-item routerLink="/admin/tickets">
+    <mat-icon mat-list-icon>visibility</mat-icon>Tickets
+  </button>
+  <button mat-list-item (click)="logout()">
+    <mat-icon mat-list-icon>logout</mat-icon>Logout
+  </button>
+</mat-action-list>

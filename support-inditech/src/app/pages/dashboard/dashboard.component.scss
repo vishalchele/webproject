@@ -1,0 +1,16 @@
+@import '~@angular/material/theming';
+.full-width{
+  width: 20%;
+  text-align: center;
+}
+.full-width-button{
+  width:40%;
+
+}
+.clickable {
+  cursor: pointer;
+  &:hover {
+    @include mat-elevation(8);
+  }
+}
+

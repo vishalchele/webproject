@@ -1,0 +1,121 @@
+
+.text-right {
+  text-align: right;
+}
+
+.boldWord {
+  font-weight: bold;
+}
+.pad{
+  padding-top: 5%;
+}
+
+.matc {
+  background-color: #01CF54;
+}
+.matp {
+  background-color: #eceef0;
+  min-height: 600px;
+}
+.cmatp {
+  background-color: #70AD47;
+  width: 17px;
+  height: 17px;
+  line-height: 20px;
+}
+.mato {
+  background-color: #FF0000;
+  width: 17px;
+  height: 17px;
+  line-height: 20px;
+
+}
+.matg {
+  background-color: #eceef0;
+
+}
+
+
+input {
+  padding: .5em;
+}
+
+
+.container {
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: .5em;
+}
+
+.container:nth-child(1) label {
+align-self: flex-end; /* vertical align bottom */
+background: lightblue;
+}
+
+.container:nth-child(2) label {
+align-self: center; /* vertical align center */
+background: pink;
+}
+
+.container:nth-child(3) label {
+align-self: flex-start; /* vertical align top */
+background: lightgreen;
+}
+
+
+.boldWord {
+  font-weight: bold;
+}
+.pad{
+  padding-top: 5%;
+}
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+
+
+}
+.grid-item {
+  background-color: rgba(173,216,230);
+  padding: 10px;
+  font-size: 15px;
+  text-align: center;
+}
+.textadjustment{
+  text-align: right;
+}
+.text-adjustment{
+  text-align: left;
+}
+
+.text-padding{
+  padding: 0 0 0 5px;
+}
+.mat-card-color{
+  background-color: #E2F1F6;
+}
+.button-color{
+  background-color: rgba(173,216,230);
+}
+
+
+.grid-containerdiv {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px 2em;
+
+}
+.grid-itemdiv {
+
+  padding: 10px;
+  font-size: 15px;
+  align-items: grid-start;
+}
+.mat-subdiveder{
+  height: 40px;
+}
+.text-uppercase {
+  top: 50%;
+}

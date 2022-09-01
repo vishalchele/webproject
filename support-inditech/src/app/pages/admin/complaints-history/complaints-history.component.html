@@ -1,0 +1,139 @@
+<mat-card class="matp">
+  <mat-list>
+    <h2>Complaint History</h2>
+    <div *ngFor="let c of complaintsDetailsData.slice().reverse()">
+      <div class="grid-container boldWord">
+        <div class="grid-item text-adjustment boldWord" mat-line *ngIf="c.complaintId !=null">{{"Ticket ID:
+          "}}{{c.complaintId}}</div>
+        <div class="grid-item boldWord" mat-line *ngIf="c.complainerCompanyName !=null">{{c.complainerCompanyName}}
+        </div>
+        <div class="grid-item textadjustment">{{c.complaintStatusString}} <button mat-mini-fab
+            class="{{c.complaintStatusString =='Pending' ? 'mato' : 'cmatp'}}">
+          </button></div>
+      </div>
+
+      <mat-card matRipple class="clickable mat-card-color">
+        <div class="grid-containerdiv">
+          <div class="boldWord" mat-line *ngIf="c.complaintDescription !=null">{{"Description : "}}</div>
+          <div class="text-padding" mat-line *ngIf="c.complaintDescription !=null">{{c.complaintDescription}}</div>
+        </div>
+
+        <div class="grid-containerdiv text-uppercase">
+          <div class="boldWord " mat-line *ngIf="c.siteName !=null">{{"Site Name/Address : "}}</div>
+          <div class="text-padding" mat-line *ngIf="c.siteName !=null">{{c.siteName}}</div>
+        </div>
+
+        <div class="grid-containerdiv">
+          <div class="boldWord" mat-line *ngIf="c.complainerName !=null">{{"Raised By User : "}}</div>
+          <div class="text-padding" mat-line *ngIf="c.complainerName !=null">{{c.complainerName}}</div>
+        </div>
+
+        <!-- <div class="grid-containerdiv">
+          <div  class="boldWord" mat-line *ngIf="c.complainerCompanyName !=null">{{"Company Name: "}}</div>
+          <div class="text-padding" mat-line *ngIf="c.complainerCompanyName !=null">{{c.complainerCompanyName}}</div>
+          </div> -->
+
+        <div class="grid-containerdiv">
+          <div class="boldWord" mat-line *ngIf="c.complaintRegisteredTimestamp !=null">{{"Pending Since: "}}</div>
+          <div class="text-padding" mat-line *ngIf="c.complaintRegisteredTimestamp !=null">
+            {{c.complaintRegisteredTimestamp}}</div>
+        </div>
+
+        <div class="grid-containerdiv">
+          <div class="boldWord" mat-line *ngIf="c.telephonicCallTimestamp !=null">{{"Assigned On Time: "}}</div>
+          <div class="text-padding" mat-line *ngIf="c.telephonicCallTimestamp !=null">{{c.telephonicCallTimestamp}}
+          </div>
+        </div>
+
+
+        <div class="grid-containerdiv">
+          <div class="boldWord" mat-line *ngIf="c.assignedForPhoneCallTimeStamp !=null">{{"Call Scheduled Time: "}}
+          </div>
+          <div class="text-padding" mat-line *ngIf="c.assignedForPhoneCallTimeStamp !=null">
+            {{c.assignedForPhoneCallTimeStamp}}</div>
+        </div>
+
+        <div class="grid-containerdiv">
+          <div class="boldWord" mat-line *ngIf="c.actualCallingTimestamp !=null">{{"Actual Call Time: "}}</div>
+          <div class="text-padding" mat-line *ngIf="c.actualCallingTimestamp !=null">{{c.actualCallingTimestamp}}</div>
+        </div>
+
+        <div class="grid-containerdiv">
+          <div class="boldWord" mat-line *ngIf="c.assignedForPhoneCallName !=null">{{"Assigned For Phone Call To: "}}
+          </div>
+          <div class="text-padding" mat-line *ngIf="c.assignedForPhoneCallName !=null">{{c.assignedForPhoneCallName}}
+          </div>
+        </div>
+
+        <div class="grid-containerdiv">
+          <div class="boldWord" mat-line *ngIf="c.isCalledToComplainant ==true">{{"Phone Call Completed: "}}</div>
+          <div class="text-padding" mat-line *ngIf="c.isCalledToComplainant ==true">{{"YES"}}</div>
+        </div>
+
+        <div class="grid-containerdiv">
+          <div class="boldWord" mat-line *ngIf="c.teleCallRemark !=null">{{"Telephonic Remark: "}}</div>
+          <div class="text-padding" mat-line *ngIf="c.teleCallRemark !=null">{{c.teleCallRemark}}</div>
+        </div>
+
+        <div class="grid-containerdiv">
+          <div class="boldWord" mat-line *ngIf="c.complaintResolvedByName !=null">{{"Resolved By Technician: "}}</div>
+          <div class="text-padding" mat-line *ngIf="c.complaintResolvedByName !=null"> {{c.complaintResolvedByName}}
+            {{c.assignedToTeleLastName}}</div>
+        </div>
+
+        <div class="grid-containerdiv">
+          <div class="boldWord" mat-line *ngIf="c.complaintResolvedTimestamp !=null">{{"Resolved On Date: "}}</div>
+          <div class="text-padding" mat-line *ngIf="c.complaintResolvedTimestamp !=null">
+            {{c.complaintResolvedTimestamp}}</div>
+        </div>
+
+
+
+
+        <br>
+
+
+      </mat-card>
+      <br>
+    </div>
+
+  </mat-list>
+</mat-card>
+
+
+
+
+
+
+
+<!-- <mat-card class="matp">
+  <mat-list>
+    <h2>ALL TICKETS</h2>
+    <div  *ngFor="let c of complaintsDetailsData">
+      <mat-card  matRipple class="clickable">
+        <div class="text-right">{{c.complaintStatusString}} <button mat-mini-fab class="{{c.status =='Pending' ? 'cmatp' : 'mato'}}">
+          </button></div>
+
+        <div mat-line>{{"Ticket ID: "}}{{c.complaintId}}</div>
+        <div mat-line>{{"Description: "}}{{c.complaintDescription}}</div>
+        <div>{{"Status: "}}{{c.complaintStatusString}}</div>
+        <div>{{"Raised by User: "}}{{c.complainerName}}</div>
+        <div>{{"Company Name: "}}{{c.complainerCompanyName}}</div>
+        <div mat-line>{{"Pending Since: "}}{{c.complaintRegisteredTimestamp}}</div>
+        <div mat-line *ngIf="c.telephonicCallTimestamp !=null">{{"Assigned On Time: "}}{{c.telephonicCallTimestamp}}</div>
+        <div mat-line *ngIf="c.assignedForPhoneCallTimeStamp !=null">{{"Call Scheduled Time: "}}{{c.assignedForPhoneCallTimeStamp}}</div>
+        <div mat-line *ngIf="c.actualCallingTimestamp !=null">{{"Actual Call Time: "}}{{c.actualCallingTimestamp}}</div>
+        <div mat-line *ngIf="c.assignedForPhoneCallName !=null">{{"Assigned For Phone Call To: "}}{{c.assignedForPhoneCallName}}</div>
+        <div mat-line *ngIf="c.isCalledToComplainant ==true">{{"Phone Call Completed: "}}{{"Yes"}}</div>
+        <div mat-line *ngIf="c.teleCallRemark !=null">{{"Telephonic Remark: "}}{{c.teleCallRemark}}</div>
+        <div mat-line *ngIf="c.complaintResolvedByName !=null">{{"Resolved By Technician: "}}{{c.complaintResolvedByName}}</div>
+        <div mat-line *ngIf="c.complaintResolvedTimestamp !=null">{{"Resolved On Date: "}}{{c.complaintResolvedTimestamp}}</div>
+
+
+
+      </mat-card>
+
+<br>
+    </div>
+  </mat-list>
+</mat-card> -->

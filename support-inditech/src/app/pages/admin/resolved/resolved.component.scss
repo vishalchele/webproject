@@ -1,0 +1,68 @@
+.cmatp {
+  background-color:#70AD47;
+  width: 20px;
+  height: 20px;
+  line-height: 16px;
+}
+.matp {
+  background-color: #eceef0;
+  min-height: 570px;
+}
+.text-right {
+  text-align: right;
+  padding-top: 2%;
+}
+.boldWord {
+  font-weight: bold;
+}
+.matpp {
+  background-color:#F8A318;
+}
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+
+
+}
+.grid-item {
+  background-color: rgba(173,216,230);
+  padding: 10px;
+  font-size: 15px;
+  text-align: center;
+}
+.textadjustment{
+  text-align: right;
+}
+.text-adjustment{
+  text-align: left;
+}
+
+.text-padding{
+  padding: 0 0 0 5px;
+}
+.mat-card-color{
+  background-color: #E2F1F6;
+}
+.button-color{
+  background-color: rgba(173,216,230);
+}
+
+
+.grid-containerdiv {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px 2em;
+
+}
+.grid-itemdiv {
+
+  padding: 10px;
+  font-size: 15px;
+  align-items: grid-start;
+}
+.mat-subdiveder{
+  height: 40px;
+}
+.text-uppercase {
+  top: 50%;
+}

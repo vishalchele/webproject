@@ -1,0 +1,17 @@
+<mat-toolbar class="colur shape">
+  <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+    <img src="../../../assets/inditech_logo.png" alt="" class="profile-image">
+  </button>
+
+  <span class="example-spacer"></span>
+  <a (click)="logout()" *ngIf="isLoggedIn" mat-icon-button class="example-icon favorite-icon mr20 "
+    aria-label="Example icon-button with heart icon">
+    Logout
+  </a>
+
+  <button *ngIf="isLoggedIn && user" mat-button class="example-icon favorite-icon ml10"
+    aria-label="Example icon-button with heart icon">
+    {{ user.firstName}} {{user.lastName }}
+  </button>
+
+</mat-toolbar>

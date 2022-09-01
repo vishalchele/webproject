@@ -1,0 +1,30 @@
+<mat-card class="matp">
+
+  <h1>Gallery</h1>
+
+  <mat-card>
+    <h1 class="text-center">Complaint Photos</h1>
+
+    <img id="view" *ngIf="retrievedImage !=null"
+      style="width: 300px; height: 300px; text-align:center;margin:0; padding:0;" [src]="retrievedImage">
+    <p class="text-center" *ngIf="retrievedImage ==null">Complaint Photos Not Found</p>
+  </mat-card>
+  <br>
+
+
+  <mat-card>
+    <h1 class="text-center">Material Photos</h1>
+
+    <img id="view" *ngIf="retrievedMaterialImage !=null"
+      style="width: 300px; height: 300px; text-align:center;margin:0; padding:0;" [src]="retrievedMaterialImage">
+    <p class="text-center" *ngIf="retrievedMaterialImage ==null">Material Photos Not Found</p>
+  </mat-card>
+
+  <div>
+    <lib-ngx-image-zoom style="width: 300px; height: 300px; text-align:center;margin:0; padding:0;"
+      [thumbImage]=myThumbnail [fullImage]=myFullresImage [magnification]="1" [enableScrollZoom]="true"
+      [enableLens]="true" [lensWidth]="200">
+    </lib-ngx-image-zoom>
+
+  </div>
+</mat-card>

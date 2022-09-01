@@ -1,0 +1,118 @@
+.column {
+  float: left;
+  width: 25%;
+  padding: 0 10px;
+}
+section {
+  display: table;
+}
+
+.example-label {
+  display: table-cell;
+  font-size: 14px;
+  margin-left: 8px;
+  min-width: 120px;
+}
+
+.example-button-row {
+  display: table-cell;
+  width: 490px;
+}
+
+.example-button-row .mat-button-base {
+  margin: 8px 8px 8px 0;
+}
+
+.example-flex-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.example-button-container {
+  display: flex;
+  justify-content: center;
+  width: 120px;
+}
+.matc {
+  background-color: #01CF54;
+}
+.matr {
+  background-color:#FF0000;
+}
+.subDiv {
+  background-color:#F8A318;
+  color: white;
+}
+
+.matp {
+  background-color:#70AD47;
+}
+.mato {
+  background-color: #660de7;
+
+}
+.matcard {
+  background-color: #FFFFFF;
+
+}
+.matg {
+  background-color: #F2F3F3;
+  min-height: 600px;
+}
+
+.clickable {
+  position: relative;
+  z-index: 1;
+
+}
+
+.clickable:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: scaleY(0.3);
+  transform-origin: top center;
+  background:#F0F0F0;
+  z-index: -1;
+  transition: transform 0.3s;
+}
+
+.clickable:hover::after {
+  transform: scaleY(1);
+}
+.shape {
+  position: relative;
+  overflow: hidden;
+  height: 80px;
+}
+
+.shape::before {
+  border-radius: 100%;
+  position: absolute;
+  background: #97A1AB;
+  right:-200px;
+  left: -250px;
+  top: -200px;
+  content: '';
+  bottom: 30px;
+}
+.shapeHed {
+  position: relative;
+  overflow: hidden;
+  height: 50px;
+}
+
+.shapeHed::before {
+  border-radius: 100%;
+  position: absolute;
+  background: #bda7f2;
+  right:-800px;
+  left: -150px;
+  top: 30px;
+  content: '';
+  bottom: -100px;
+}

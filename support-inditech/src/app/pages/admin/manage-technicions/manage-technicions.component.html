@@ -1,0 +1,43 @@
+<mat-card class="matp">
+  <h1>Manage Technicians</h1>
+  <mat-card-content>
+    <div class="bootstrap-wrapper text-center">
+      <div class="row">
+        <div class="col-md-10 offset-md-1">
+          <form (ngSubmit)="formSubmit()">
+            <mat-form-field class="w100" appearance="outline">
+              <mat-label>Technician List</mat-label>
+              <mat-select required>
+                <mat-option *ngFor="let c of complaintsDetailsData" (click)="BlockId(c)" [value]="c.userId" required>
+                  {{c.firstName.toUpperCase()+" "+c.lastName.toUpperCase()}}
+                </mat-option>
+
+              </mat-select>
+            </mat-form-field>
+            <h3 *ngIf="countOfCallsAssigne !=undefined">{{"Count of calls Assigned: "+countOfCallsAssigne}}</h3>
+
+            <mat-form-field class="w100" appearance="outline">
+              <mat-label>Transfer Technician List</mat-label>
+              <mat-select>
+
+                <mat-option *ngFor="let c of transferComplanttechList" [value]="c.userId" (click)="TransferId(c)">
+                  <ng-container>{{c.firstName.toUpperCase()+" "+c.lastName.toUpperCase()}}</ng-container>
+
+
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+
+            <div class="container text-center mt15">
+              <button mat-raised-button color="primary">Block</button>
+            </div>
+
+
+
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>

@@ -1,0 +1,34 @@
+<mat-card class="matp">
+  <h1>Add New Complaint</h1>
+  <mat-card-content>
+    <div class="bootstrap-wrapper text-center">
+      <div class="row">
+        <div class="col-md-10 offset-md-1">
+          <form action="">
+            <mat-form-field class="w100" appearance="outline">
+              <mat-label>Site Name/Address</mat-label>
+              <input autofocus type="text" name="title" matInput placeholder="Enter site name/address here" />
+            </mat-form-field>
+            <mat-form-field class="w100" appearance="outline">
+              <mat-label>Complaint Description</mat-label>
+              <textarea name="text" matInput placeholder="Enter complaint description here" rows="15"></textarea>
+            </mat-form-field>
+            <!-- <ckeditor
+      [editor]="Editor"
+      data="<h1>Write your complaint description !</h1>"
+      name="content"
+      [(ngModel)]="complaintDescription.complaint"
+      >
+    </ckeditor> -->
+
+            <div class="container text-center mt15">
+              <button mat-raised-button color="accent">Add</button>
+            </div>
+
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>
